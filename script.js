@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const apiKey = "input your api"; // replace with your actual API key
+    const apiKey = "input your API"; // replace with your actual API key
     const searchBtn = document.getElementById("searchBtn");
     const locationBtn = document.getElementById("locationBtn");
     const cityInput = document.getElementById("city_input");
@@ -99,3 +99,15 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 });
 
+function saveWeatherData(location, startDate, endDate, temperature) {
+    fetch('http://localhost:3000/api/weather', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ location, startDate, endDate, temperature }),
+    })
+    .then(response => response.json())
+    .then(data => console.log('Data saved:', data))
+    .catch(error => console.error('Error:', error));
+}
