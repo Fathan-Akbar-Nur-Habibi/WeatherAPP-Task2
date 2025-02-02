@@ -35,7 +35,6 @@ CREATE TABLE weather (
     endDate TEXT,
     
     temperature REAL
-
 );
 
 ### 🖥 **Running the Frontend**
@@ -55,7 +54,7 @@ node server/server.js
 
 Open POSTMAN and create a workspace to test the backend Weather App.
 
-Enter the localhost URL according to the CRUD method you want to test. (The required URL can be found in the GIF video above).
+Enter the localhost URL according to the CRUD method you want to test. (The required URL can be found in the GIF video).
 
 
 ### 📝 **Testing the API with POSTMAN**
