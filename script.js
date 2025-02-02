@@ -1,9 +1,30 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const apiKey = "input your API"; // replace with your actual API key
+    const apiKey = "input key api"; // replace with your actual API key
     const searchBtn = document.getElementById("searchBtn");
     const locationBtn = document.getElementById("locationBtn");
     const cityInput = document.getElementById("city_input");
+    const exportBtn = document.getElementById("exportBtn");
     
+   exportBtn.addEventListener("click", () => {
+    fetch('http://localhost:3000/api/weather/export/pdf')
+        .then(response => {
+            if (response.ok) {
+                return response.blob(); // Mengambil data sebagai blob
+            }
+            throw new Error('Network response was not ok.');
+        })
+        .then(blob => {
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.style.display = 'none';
+            a.href = url;
+            a.download = 'weather_data.pdf'; // Nama file yang akan diunduh
+            document.body.appendChild(a);
+            a.click();
+            window.URL.revokeObjectURL(url);
+        })
+        .catch(error => console.error('Error downloading PDF:', error));
+});
     searchBtn.addEventListener("click", () => {
         const city = cityInput.value;
         if (city) fetchWeatherData(city);
