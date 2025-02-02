@@ -25,14 +25,20 @@ npm install express sqlite3 body-parser cors
 Create Database: Create an SQLite3 database file named weather.db and define the following table:
 
 CREATE TABLE weather (
+    
     id INTEGER PRIMARY KEY AUTOINCREMENT,
+    
     location TEXT,
+    
     startDate TEXT,
+    
     endDate TEXT,
+    
     temperature REAL
+
 );
 
-###🖥 **Running the Frontend**
+### 🖥 **Running the Frontend**
 
 Right-click on the index.html file.
 
@@ -41,7 +47,7 @@ Select "Open with Live Server".
 The app will open in your browser and be ready to use.
 
 
-###🔧**Running the Backend**
+### 🔧**Running the Backend**
 
 Start the backend server by running the following command in your VS Code terminal:
 
@@ -52,11 +58,11 @@ Open POSTMAN and create a workspace to test the backend Weather App.
 Enter the localhost URL according to the CRUD method you want to test. (The required URL can be found in the GIF video above).
 
 
-###📝 **Testing the API with POSTMAN**
+### 📝 **Testing the API with POSTMAN**
 
 Once the backend is running, you can use POSTMAN to test the developed API, including CRUD operations related to weather data.
 
-###📽 **Demo**
+### 📽 **Demo**
 ![WeatherAPPTask2](https://github.com/user-attachments/assets/d68297db-a092-4d8e-9bdb-27814a6cbf81)
 
 
